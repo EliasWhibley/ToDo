@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#asignacion {
+    width: 30%;
+    height: 100%;
+    background-color: lightgray;
+}
+
+#formAsignacion {
+    padding: 100px;
+    align-items: center;
+}
+
+.search {
+    padding: 100px;
+    align-items: center;
+}
+
+#gestionTareas {
+    width: 70%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
+}
+
+.importancia {
+    margin: 2px;
+    width: 21%;
+}
