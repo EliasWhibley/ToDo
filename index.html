@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
     <div class="wrapper">
         <div id="asignacion">
             <form id="formAsignacion">
+                <div id="error">Rellene todos los campos</div>
                 <label for="tareaNueva">Tarea: </label>
                 <input type="text" id="tareaNueva"><br>
                 <label for="descripTarea">Descripción</label>
@@ -31,21 +33,7 @@
             <div class="importancia" id="noAsignadas">
                 <h3>No asignadas</h3>
                 <div class="contenedor">
-                    <div class="item">
-                        <h4>Título de la tarea</h4>
-                        <p>Descripción</p>
-                        <i class="fas fa-trash-alt"></i>
-                    </div>
-                    <div class="item">
-                        <h4>Título de la tarea</h4>
-                        <p>Descripción</p>
-                        <i class="fas fa-trash-alt"></i>
-                    </div>
-                    <div class="item">
-                        <h4>Título de la tarea</h4>
-                        <p>Descripción</p>
-                        <i class="fas fa-trash-alt"></i>
-                    </div>
+
                 </div>
             </div>
             <div class="importancia" id="diaria">
@@ -82,8 +70,8 @@
 
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
-        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.5.0.js"></script>
+    <script src="js/jquery-ui.js"></script>
     <script src="js/eventos.js"></script>
 </body>
 
