@@ -34,7 +34,7 @@ function recolectarDatos(event) {
 
 
 function pintarLista(pLista, pImportancia) {
-    let contenedor = $('#noAsignadas .contenedor');
+    let contenedor = $('#nuevos #noAsignadas');
     contenedor.html('');
     for (item of pLista) {
         if (item.importancia == pImportancia) {
@@ -42,22 +42,51 @@ function pintarLista(pLista, pImportancia) {
             let nuevoItem = $(`<div data-id=${item.id}>
            <h4>${item.nombre}</h4>
            <p>${item.descripcion}</p>
+           <div data-id=${item.id} class="btnBorrar">
            <i class="fas fa-trash-alt"></i>
+           </div>
        </div>`);
             nuevoItem.addClass('item');
 
             contenedor.append(nuevoItem);
 
-            nuevoItem.draggable();
+            nuevoItem.draggable({
+                cancel: ".btnBorrar",
+                helper: "clone",
+                cursor: "move"
+            });
         }
     }
 };
-$('.item').draggable();
+$('.item').draggable({
+    helper: "clone",
+    cursor: "move",
+    cancel: ".btnBorrar"
+});
 
 
 $('.contenedor').droppable({
     drop: function (event, ui) {
         ui.draggable.detach();
         $(this).append(ui.draggable);
+        console.log(ui.draggable);
+        let tareaBuscada = listaTareas.find(function (tarea) {
+            return tarea.id == (ui.draggable).data('id');
+        });
+        console.log($(this).attr('id'))
+        tareaBuscada.importancia = $(this).attr('id');
+
     }
 });
+
+/* BORRAR ITEMS */
+$('.btnBorrar').on('click', borrarItem);
+
+function borrarItem(event) {
+    let indice = listaTareas.findIndex(function (tarea) {
+        console.log((event.target).dataset.id);
+        return tarea.id == (event.target).dataset.id;
+
+    })
+    listaTareas.splice(indice, 1);
+}

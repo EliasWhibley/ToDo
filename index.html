@@ -30,26 +30,27 @@
             </form>
         </div>
         <div id="gestionTareas">
-            <div class="importancia" id="noAsignadas">
+            <div class="importancia" id="nuevos">
                 <h3>No asignadas</h3>
-                <div class="contenedor">
+                <div class="contenedor" id="noAsignadas">
 
                 </div>
             </div>
-            <div class="importancia" id="diaria">
+            <div class="importancia">
                 <h3>Diarias</h3>
-                <div class="contenedor">
+                <div class="contenedor" id="diaria">
                     <div class="item">
                         <h4>Título de la tarea</h4>
                         <p>Descripción</p>
-                        <i class="fas fa-trash-alt"></i>
+                        <!-- <i class="fas fa-trash-alt"></i> -->
+                        <button data-id="2" class="btnDelete">Borrar</button>
                     </div>
                 </div>
 
             </div>
-            <div class="importancia" id="semanal">
+            <div class="importancia">
                 <h3>Semanales</h3>
-                <div class="contenedor">
+                <div class="contenedor" id="semanal">
                     <div class="item">
                         <h4>Título de la tarea</h4>
                         <p>Descripción</p>
@@ -57,9 +58,9 @@
                     </div>
                 </div>
             </div>
-            <div class="importancia" id="urgente">
+            <div class="importancia">
                 <h3>URGENTE</h3>
-                <div class="contenedor">
+                <div class="contenedor" id="urgente">
                     <div class="item">
                         <h4>Título de la tarea</h4>
                         <p>Descripción</p>

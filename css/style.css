@@ -71,7 +71,7 @@
 }
 
 .item {
-    width: 80%;
+    width: 150px;
     padding: 2px;
     background-color: lightgray;
     text-align: center;
@@ -87,4 +87,8 @@
     background-color: red;
     color: white;
     display: none;
+}
+
+i {
+    cursor: pointer;
 }
