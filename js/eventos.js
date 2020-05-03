@@ -100,3 +100,21 @@ function borrarItem(event) {
 }
 
 /* BUSCAR ITEM */
+
+$('#busqueda').on('keyup', buscarItems);
+
+
+function buscarItems(event) {
+    console.log(event.target.value.toLowerCase());
+    let nombreBuscado = (event.target.value.toLowerCase());
+    for (tarea of listaTareas) {
+        let tareaBuscada = (tarea.nombre).toLowerCase();
+        let tareaEmergente = document.getElementById('Tarea' + tarea.id)
+        if (tareaBuscada.includes(nombreBuscado) || nombreBuscado == '') {
+
+            tareaEmergente.style.display = 'block';
+        } else {
+            tareaEmergente.style.display = 'none';
+        }
+    }
+}
