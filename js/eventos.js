@@ -98,3 +98,5 @@ function borrarItem(event) {
     let tareaBorrada = document.getElementById('Tarea' + numeroTarea);
     tareaBorrada.remove();
 }
+
+/* BUSCAR ITEM */
