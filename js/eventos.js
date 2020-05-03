@@ -80,7 +80,10 @@ $('.contenedor').droppable({
 });
 
 /* BORRAR ITEMS */
-$('.btnBorrar').on('click', borrarItem);
+/* let btnBorrar = document.getElementsByClassName('btnBorrar');
+btnBorrar.on('click', borrarItem); */
+
+$(document).on('click', '.btnBorrar', borrarItem);
 
 function borrarItem(event) {
     let indice = listaTareas.findIndex(function (tarea) {

@@ -92,3 +92,7 @@
 i {
     cursor: pointer;
 }
+
+.btnBorrar {
+    width: 20px;
+}
