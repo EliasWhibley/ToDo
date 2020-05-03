@@ -39,7 +39,7 @@ function pintarLista(pLista, pImportancia) {
     for (item of pLista) {
         if (item.importancia == pImportancia) {
 
-            let nuevoItem = $(`<div data-id=${item.id}>
+            let nuevoItem = $(`<div id="Tarea${item.id}" data-id=${item.id}>
            <h4>${item.nombre}</h4>
            <p>${item.descripcion}</p>
            <div data-id=${item.id} class="btnBorrar">
@@ -86,10 +86,15 @@ btnBorrar.on('click', borrarItem); */
 $(document).on('click', '.btnBorrar', borrarItem);
 
 function borrarItem(event) {
+    let numeroTarea = (event.target).parentNode.dataset.id;
     let indice = listaTareas.findIndex(function (tarea) {
-        console.log((event.target).dataset.id);
-        return tarea.id == (event.target).dataset.id;
+        console.log(numeroTarea);
+        return tarea.id == numeroTarea;
 
     })
+
     listaTareas.splice(indice, 1);
+
+    let tareaBorrada = document.getElementById('Tarea' + numeroTarea);
+    tareaBorrada.remove();
 }
