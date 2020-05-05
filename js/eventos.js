@@ -22,9 +22,9 @@ function recolectarDatos(event) {
         listaTareas.push(nuevaTarea);
 
         pintarLista(listaTareas, nuevaTarea.importancia);
-
-        document.querySelector('#tareaNueva').value = "";
-        document.querySelector('#descriptarea').value = "";
+        //JQuery
+        $('#tareaNueva').val('');
+        $('#descriptarea').val('');
     } else {
         $('#error').css('display', 'block')
     }
@@ -55,14 +55,15 @@ function pintarLista(pLista, pImportancia) {
                 helper: "clone",
                 cursor: "move"
             });
+            $('.btnBorrar').on('click', borrarItem)
         }
     }
 };
-$('.item').draggable({
+/* $('.item').draggable({
     helper: "clone",
     cursor: "move",
     cancel: ".btnBorrar"
-});
+}); */
 
 
 $('.contenedor').droppable({
@@ -83,7 +84,7 @@ $('.contenedor').droppable({
 /* let btnBorrar = document.getElementsByClassName('btnBorrar');
 btnBorrar.on('click', borrarItem); */
 
-$(document).on('click', '.btnBorrar', borrarItem);
+
 
 function borrarItem(event) {
     let numeroTarea = (event.target).parentNode.dataset.id;
