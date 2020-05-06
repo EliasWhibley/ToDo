@@ -30,6 +30,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #555E7B;
+    overflow: hidden;
 }
 
 .importancia {
